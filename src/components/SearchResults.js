@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SearchResults = ({ mockData }) => {
+const SearchResults = ({ result }) => {
     return (
         <>
-            {mockData.map(song => {
+            {result.map(song => {
                 return (
                     <div key={song.id}>
                         <h3>Title: {song.title}</h3>

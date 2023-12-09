@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SearchResults from "./components/SearchResults";
 
 const mockData = [
@@ -24,9 +24,11 @@ const mockData = [
 
 
 function App() {
+  const [result, setResult] = useState(mockData);
+
   return (
     <div>
-      <SearchResults mockData={mockData}/>
+      <SearchResults result={result}/>
     </div>
   );
 }
