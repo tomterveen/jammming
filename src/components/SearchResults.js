@@ -5,11 +5,11 @@ const SearchResults = ({ mockData }) => {
         <>
             {mockData.map(song => {
                 return (
-                    <ul>
-                        <li>Title: {song.title}</li>
-                        <li>Artist: {song.artist}</li>
-                        <li>Album: {song.album}</li>
-                    </ul>
+                    <div key={song.id}>
+                        <h3>Title: {song.title}</h3>
+                        <p>Artist: {song.artist}</p>
+                        <p>Album: {song.album}</p>
+                    </div>
                 )
             })}
         </>
