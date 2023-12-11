@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Tracklist = ({tracklist}) => {
+const Tracklist = ({tracklist, playlist}) => {
     return (
         <>
-            <h2>Custom Tracklist</h2>
+            <h2>{playlist ? playlist : "Name your playlist"}</h2>
             {tracklist.map(track => {
                 return (
                     <>
