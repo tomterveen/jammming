@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import SearchResults from "./components/SearchResults";
 import Playlist from "./components/Playlist";
 
+import styles from "./css/App.module.css"
+
 const mockData = [
   {
     id: 1,
@@ -46,9 +48,9 @@ function App() {
 
 
   return (
-    <div>
+    <div className={styles.appContainer}>
       <SearchResults result={result}/>
-      <Playlist playlist={playlist} handleChange={handleChange}/>
+      <Playlist tracklist={tracklist} playlist={playlist} handleChange={handleChange}/>
     </div>
   );
 }

@@ -1,0 +1,12 @@
+.appContainer {
+    display: grid;
+}
+
+.gridItem1 {
+    grid-column: 1 / span 2;
+    background-color: aqua;
+}
+
+.gridItem2 {
+    grid-column: 3 / span 2;
+}
