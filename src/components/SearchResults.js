@@ -4,13 +4,14 @@ import styles from '../css/SearchResults.module.css'
 const SearchResults = ({ result }) => {
     return (
         <div className={styles.gridItem1}>
-            {result.map(song => {
+            {result.map(track => {
                 return (
-                    <React.Fragment key={song.id}>
-                        <h3>Title: {song.title}</h3>
-                        <p>Artist: {song.artist}</p>
-                        <p>Album: {song.album}</p>
-                    </React.Fragment>
+                    <li key={track.id}>
+                        <h3>Title: {track.title}</h3>
+                        <p>Artist: {track.artist}</p>
+                        <p>Album: {track.album}</p>
+                        <button>➕</button>
+                    </li>
                 )
             })}
         </div>

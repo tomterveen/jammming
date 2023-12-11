@@ -44,12 +44,20 @@ function App() {
 
   const handleChange = ({ target }) => {
     setPlaylist(target.value);
-  }
+  };
+
+  const handleClick = () => {
+    setTracklist(prev => {
+      return {...prev,
+      title: "test",
+      };
+    });
+  };
 
 
   return (
     <div className={styles.appContainer}>
-      <SearchResults result={result}/>
+      <SearchResults handleClick={handleClick} result={result}/>
       <Playlist tracklist={tracklist} playlist={playlist} handleChange={handleChange}/>
     </div>
   );
