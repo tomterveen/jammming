@@ -2,12 +2,12 @@ import React from 'react';
 import Tracklist from './Tracklist';
 import styles from "../css/Playlist.module.css";
 
-const Playlist = ({playlist, handleChange, tracklist}) => {
+const Playlist = ({playlistName, handleChange, tracklist}) => {
     return (
         <div className={styles.gridItem2}>
             <form>
-                <input onChange={handleChange} value={playlist} type="text" />
-                <Tracklist playlist={playlist} tracklist={tracklist}/>
+                <input onChange={handleChange} value={playlistName} type="text" />
+                <Tracklist tracklist={tracklist}/>
             </form>
         </div>
     )

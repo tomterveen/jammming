@@ -1,15 +1,14 @@
 import React from 'react';
 import styles from "../css/Tracklist.module.css";
+import Track from "./Track";
 
-const Tracklist = ({tracklist, playlist}) => {
+const Tracklist = ({tracklist}) => {
     return (
         <>
-            {tracklist.map(track => {
+            {tracklist.map((track) => {
                 return (
                     <div className={styles.trackContainer}>
-                        <h3>Title: {track.title}</h3>
-                        <p>Artist: {track.artist}</p>
-                        <p>Album: {track.album}</p>
+                        <Track key={track.id} track={track}/>
                     </div>
                 )
             })}

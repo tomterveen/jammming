@@ -1,20 +1,17 @@
 import React from 'react';
 import styles from '../css/SearchResults.module.css'
+import Track from "./Track";
 
-const SearchResults = ({ result }) => {
+const SearchResults = ({ searchResults}) => {
+
     return (
-        <div className={styles.gridItem1}>
-            {result.map(track => {
+        <ul className={styles.gridItem1}>
+            {searchResults.map(result => {
                 return (
-                    <li key={track.id}>
-                        <h3>Title: {track.title}</h3>
-                        <p>Artist: {track.artist}</p>
-                        <p>Album: {track.album}</p>
-                        <button>➕</button>
-                    </li>
+                    <Track key={result.id} track={result}/>
                 )
             })}
-        </div>
+        </ul>
     )
 };
 

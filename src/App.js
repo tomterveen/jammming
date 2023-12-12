@@ -9,7 +9,7 @@ const mockData = [
     id: 1,
     title: "Rigthous",
     artist: "Protoje",
-    album: "In search of time"
+    album: "In search of time",
   },
   {
     id: 2,
@@ -25,40 +25,45 @@ const mockData = [
   },
 ]
 
+const mockTracklist = [{
+  id: 4,
+  title: "Weed a thing",
+  artist: "Protoje",
+  album: "In search of time"
+},
+{
+  id: 5,
+  title: "Switch it up",
+  artist: "Protoje",
+  album: "In search of time"
+}];
+
 
 function App() {
-  const [result, setResult] = useState(mockData);
-  const [playlist, setPlaylist] = useState("");
-  const [tracklist, setTracklist] = useState([{
-    id: 1,
-    title: "Weed a thing",
-    artist: "Protoje",
-    album: "In search of time"
-  },
-  {
-    id: 2,
-    title: "Switch it up",
-    artist: "Protoje",
-    album: "In search of time"
-  }]);
+  const [playlistName, setPlaylistName] = useState("");
+  
+  const [searchResults, setSearchResults] = useState(mockData);
+  const [tracklist, setTracklist] = useState(mockTracklist);
 
   const handleChange = ({ target }) => {
-    setPlaylist(target.value);
+    setPlaylistName(target.value);
   };
 
-  const handleClick = () => {
-    setTracklist(prev => {
-      return {...prev,
-      title: "test",
-      };
-    });
+  const addTrack = (track) => {
+    const foundTrack = tracklist.find(trackList => trackList.id === track.id);
+    const newTrack = searchResults.concat(track);
+    if (foundTrack) {
+      console.log("Track already in tracklist")
+    } else {
+    setTracklist(tracklist => [...tracklist, newTrack]);
+    }
   };
 
 
   return (
     <div className={styles.appContainer}>
-      <SearchResults handleClick={handleClick} result={result}/>
-      <Playlist tracklist={tracklist} playlist={playlist} handleChange={handleChange}/>
+      <SearchResults searchResults={searchResults}/>
+      <Playlist tracklist={tracklist} playlistName={playlistName} handleChange={handleChange}/>
     </div>
   );
 }
