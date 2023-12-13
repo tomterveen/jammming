@@ -5,13 +5,13 @@ import Track from "./Track";
 const SearchResults = ({ searchResults, addTrack}) => {
 
     return (
-        <ul className={styles.gridItem1}>
+        <div className={styles.gridItem1}>
             {searchResults.map(result => {
                 return (
                     <Track key={result.id} track={result} addTrack={addTrack}/>
                 )
             })}
-        </ul>
+        </div>
     )
 };
 

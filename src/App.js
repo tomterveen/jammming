@@ -58,11 +58,15 @@ function App() {
     }
   };
 
+  const removeTrack = (track) => {
+    setTracklist(tracklist.filter(song => song.id !== track.id));
+  }
+
 
   return (
     <div className={styles.appContainer}>
       <SearchResults searchResults={searchResults} addTrack={addTrack}/>
-      <Playlist tracklist={tracklist} playlistName={playlistName} handleChange={handleChange}/>
+      <Playlist removeTrack={removeTrack} tracklist={tracklist} playlistName={playlistName} handleChange={handleChange}/>
     </div>
   );
 }
