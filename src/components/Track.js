@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Track = ({track, key, addTrack}) => {
+const Track = ({track, addTrack}) => {
 
-    const handleAddClick = (track) => {
+    const handleAddClick = () => {
         console.log(track);
         addTrack(track);
     }

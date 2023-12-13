@@ -51,7 +51,6 @@ function App() {
 
   const addTrack = (track) => {
     const foundTrack = tracklist.find(trackList => trackList.id === track.id);
-    // const newTrack = searchResults.concat(track);
     if (foundTrack) {
       console.log("Track already in tracklist")
     } else {
