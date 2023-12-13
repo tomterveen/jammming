@@ -51,18 +51,18 @@ function App() {
 
   const addTrack = (track) => {
     const foundTrack = tracklist.find(trackList => trackList.id === track.id);
-    const newTrack = searchResults.concat(track);
+    // const newTrack = searchResults.concat(track);
     if (foundTrack) {
       console.log("Track already in tracklist")
     } else {
-    setTracklist(tracklist => [...tracklist, newTrack]);
+    setTracklist(tracklist => [...tracklist, track]);
     }
   };
 
 
   return (
     <div className={styles.appContainer}>
-      <SearchResults searchResults={searchResults}/>
+      <SearchResults searchResults={searchResults} addTrack={addTrack}/>
       <Playlist tracklist={tracklist} playlistName={playlistName} handleChange={handleChange}/>
     </div>
   );
